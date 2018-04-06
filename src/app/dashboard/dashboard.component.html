@@ -1,0 +1,151 @@
+
+
+<mat-card>
+  <div fxLayout="row" fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="85" fxFlex="100">
+      <mat-card-title>Analytics</mat-card-title>
+      <mat-card-subtitle fxLayout="row" fxLayoutAlign="start center">
+        30 Day Average &nbsp; <span class="font-weight-bold mat-text-warn">+458,90</span>
+      </mat-card-subtitle>
+      <div class="py-1 w-100">
+        <ngx-charts-area-chart
+          class="chart-container"
+          [scheme]="colorScheme"
+          [schemeType]="schemeType"
+          [results]="dateData"
+          [legend]="showLegend"
+          (legendLabelClick)="onLegendLabelClick($event)"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          [autoScale]="autoScale"
+          [timeline]="timeline"
+          [showGridLines]="showGridLines"
+          [roundDomains]="roundDomains"
+          [curve]="curve"
+          [tooltipDisabled]="tooltipDisabled"
+          (select)="select($event)">
+        </ngx-charts-area-chart>
+      </div>
+    </div>
+    <!--<div class="mat-teal-100" fxFlex fxLayoutAlign="start center">-->
+      <!--<div fxLayout="column" fxLayout.sm="row" fxLayout.xs="row" class="w-100">-->
+        <!--<div fxFlex class="pa-1">-->
+          <!--<p class="mb-0 text-md">Campaigns</p>-->
+          <!--<h1 class="mt-0 mb-0">103 <span class="text-xs mat-text-primary">&#9650; +0.45%</span></h1>-->
+        <!--</div>-->
+        <!--<div fxFlex class="pa-1">-->
+          <!--<p class="mb-0 text-md">Customers</p>-->
+          <!--<h1 class="mt-0 mb-0">230 <span class="text-xs mat-text-warn">&#9660; -8.95%</span></h1>-->
+        <!--</div>-->
+        <!--<div fxFlex class="pa-1">-->
+          <!--<p class="mb-0 text-md">Queries</p>-->
+          <!--<h1 class="mt-0 mb-0">323 <span class="text-xs mat-text-warn">&#9660; -3.4%</span></h1>-->
+        <!--</div>-->
+        <!--<div fxFlex class="pa-1">-->
+          <!--<p class="mb-0 text-md">Opens</p>-->
+          <!--<h1 class="mt-0 mb-0">870 <span class="text-xs mat-text-primary">&#9650; +4.90%</span></h1>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  </div>
+</mat-card>
+
+<div fxLayout="row"  fxLayoutWrap="wrap">
+  <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="100" fxFlex="100">
+    <div fxLayout="column" fxLayoutWrap="wrap">
+      <div fxFlex="100">
+        <mat-card class="card-widget mat-purple">
+          <div mat-card-widget>
+            <div fxLayout="row" fxLayoutAlign="start center" class="w-100">
+              <div>
+                <h1 class="text-xxl mt-0 mb-0">
+                  <mat-icon class="block text-xxl w-auto h-auto">cloud</mat-icon>
+                </h1>
+              </div>
+              <div fxFlex class="mx-1 text-xs-right">
+                <h1 class="mt-0 mb-0">6 &deg;</h1>
+                <h5 class="mt-0 mb-0">Saturday 2:00 AM</h5>
+                <p class="text-md mt-0 mb-0">Mostly Sunny</p>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <div fxFlex="100">
+        <mat-card class="card-widget">
+          <div mat-card-widget>
+            <div fxLayout="row" fxLayoutAlign="start center" class="w-100">
+              <div>
+                <img src="assets/images/face1.jpg" class="block radius-circle" width="60" height="60">
+              </div>
+              <div fxFlex class="mx-1 text-xs-right">
+                <h1 class="mt-0 mb-0">Envato</h1>
+                <h5 class="mt-0 mb-0">hello@example.com</h5>
+                <p class="mat-text-muted text-md mt-0 mb-0">Administrator</p>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <div fxFlex="100">
+        <mat-card class="card-widget mat-yellow">
+          <div mat-card-widget>
+            <div fxLayout="row" fxLayoutAlign="start center" class="w-100">
+              <div>
+                <mat-icon class="block text-xxl w-auto h-auto">filter_hdr</mat-icon>
+              </div>
+              <div fxFlex class="mx-1 text-xs-right">
+                <h2 class="mt-0 mb-0">Warning!</h2>
+                <h5 class="mt-0 mb-0">Error Code 404</h5>
+                <p class="mat-text-muted text-md mt-0 mb-0">Item Not Found</p>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+  <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-title>Newsfeed</mat-card-title>
+      <mat-card-subtitle>Stories posted today</mat-card-subtitle>
+      <hr>
+      <mat-list>
+        <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
+          <mat-list-item>
+            <img mat-list-avatar src="{{item.photo}}" alt="">
+            <h3 matLine> {{item.from}} </h3>
+            <p matLine> {{item.subject}} - {{item.message}} </p>
+          </mat-list-item>
+        </ng-template>
+      </mat-list>
+    </mat-card>
+  </div>
+  <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="50" fxFlex="100">
+    <mat-card>
+      <div class="card-image-header bg-image bg-image-signup" style="height: 213px;"></div>
+      <mat-card-content class="text-xs-center">
+        <div fxLayout="row"  fxLayoutWrap="wrap" class="text-uppercase">
+          <div fxFlex="33.33%">
+            <h2 class="mt-0 mb-0">24</h2>
+            <p class="mt-0 mb-0 text-md mat-text-muted">Comments</p>
+          </div>
+          <div fxFlex="33.33%">
+            <h2 class="mt-0 mb-0">45</h2>
+            <p class="mt-0 mb-0 text-md mat-text-muted">Likes</p>
+          </div>
+          <div fxFlex="33.33%">
+            <h2 class="mt-0 mb-0">984</h2>
+            <p class="mt-0 mb-0 text-md mat-text-muted">Shares</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
