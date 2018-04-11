@@ -4,9 +4,7 @@ import { DocsComponent } from './docs.component';
 
 export const DocsRoutes: Routes = [
   {
-    path: '',
-    component: DocsComponent,
-    data: {
+    path: '', component: DocsComponent, data: {
       heading: 'Documentation',
       css: ''
     }

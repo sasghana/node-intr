@@ -22,4 +22,11 @@
     max-width: 100px;
     text-align: right;
   }
+
+  mat-grid-tile {
+    background-image: url("/assets/images/sas-experience.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+  }
 }

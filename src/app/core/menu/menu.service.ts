@@ -29,25 +29,31 @@ const MENUITEMS = [
     state: '/',
     name: 'Dashboard',
     type: 'link',
-    icon: 'explore '
+    icon: ''
   },
   {
     state: 'myfeed',
     name: 'My Feed',
     type: 'link',
-    icon: 'show_chart'
+    icon: ''
   },
   {
     state: 'post',
     name: 'Posts',
     type: 'link',
-    icon: 'photo'
+    icon: ''
   },
   {
-    state: 'like',
-    name: 'Likes',
-    type: 'link',
-    icon: 'looks_3'
+    state: 'groups',
+    name: 'All Groups',
+    type: 'sub',
+    icon: '',
+    children: [
+      {state: 'signin', name: 'Hr Resources'},
+      {state: 'signup', name: 'News'},
+      {state: 'forgot', name: 'Events'},
+      {state: 'lockscreen', name: 'LOCKSCREEN'},
+    ]
   },
   {
     type: 'divider'
@@ -60,13 +66,25 @@ const MENUITEMS = [
     state: 'social',
     name: 'People',
     type: 'link',
-    icon: 'contacts'
+    icon: ''
   },
   {
     state: 'social',
     name: 'Forums',
     type: 'link',
-    icon: 'contacts'
+    icon: ''
+  },
+  {
+    state: 'activity',
+    name: 'Site-wide Activity',
+    type: 'link',
+    icon: ''
+  },
+  {
+    state: 'groups',
+    name: 'Groups',
+    type: 'link',
+    icon: '',
   },
   {
     type: 'divider'
@@ -79,28 +97,50 @@ const MENUITEMS = [
     state: 'calendar',
     name: 'Calendar',
     type: 'link',
-    icon: 'date_range'
+    icon: ''
   },
   {
     state: 'messages',
     name: 'MESSAGES',
     type: 'link',
-    icon: 'email'
+    icon: ''
   },
   {
     state: 'taskboard',
     name: 'TASKBOARD',
     type: 'link',
-    icon: 'view_column',
+    icon: '',
+  },
+  {
+    state: 'gallery',
+    name: 'Gallery',
+    type: 'link',
+    icon: ''
+  },
+  {
+    state: 'filemanager',
+    name: 'File Manager',
+    type: 'link',
+    icon: '',
+  },
+  {
+    state: 'buggedout',
+    name: 'Bugged Out',
+    type: 'link',
+    icon: ''
   },
   {
     type: 'divider'
   },
   {
+    type: 'title',
+    name: 'SUPPORT'
+  },
+  {
     state: 'documentation',
-    name: 'DOCS',
+    name: 'Knowledge Base',
     type: 'link',
-    icon: 'help'
+    icon: ''
   }
 ];
 

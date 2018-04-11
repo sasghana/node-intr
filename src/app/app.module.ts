@@ -15,7 +15,8 @@ import {
   MatTooltipModule,
   MatListModule,
   MatProgressBarModule,
-  MatSelectModule } from '@angular/material';
+  MatSelectModule,
+  MatGridListModule} from '@angular/material';
 // Angular Flexlayout
 import { FlexLayoutModule } from '@angular/flex-layout';
 // ngx-translate
@@ -93,6 +94,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatTooltipModule,
     MatListModule,
     MatSelectModule,
+    MatGridListModule,
     MatProgressBarModule,
     FlexLayoutModule,
     LoadingBarRouterModule,

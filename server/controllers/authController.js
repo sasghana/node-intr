@@ -64,7 +64,7 @@ AuthController.authenticateUser = function (req, res) {
       } else {
         user.comparePasswords(password, function (error, isMatch) {
           if (isMatch && !error) {
-            var token = jwt.sign({ username: user.username }, config.keys.secret, { expiresIn: '30m' });
+            var token = jwt.sign({ username: user.username }, config.keys.secret, { expiresIn: '24h' });
 
             res.json({ success: true, token: 'JWT ' + token, user: user.username, role: user.role });
 
@@ -92,7 +92,7 @@ AuthController.peoples = function (req, res) {
 }
 
 AuthController.people = function (req, res) {
-    console.log("get staff request ~ ",req.body);
+    console.log("people id ~ ",req.body);
     User.findById(req.params.id)
         .then(function (user) {
             res.status(200).json(user);

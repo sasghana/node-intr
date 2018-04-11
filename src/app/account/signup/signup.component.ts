@@ -24,7 +24,9 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
+      uname: [null, Validators.compose([Validators.required])],
       email: [null, Validators.compose([Validators.required, CustomValidators.email])],
+      phone: [null, Validators.compose([Validators.required])],
       password: password,
       confirmPassword: confirmPassword
     });
@@ -32,14 +34,15 @@ export class SignupComponent implements OnInit {
 
     onSubmit() {
       const postData = {
+        username: this.form.value.uname,
         email: this.form.value.email,
+        mobile: this.form.value.phone,
         password: this.form.value.confirmPassword
       }
       console.log('@component postData :: ', JSON.stringify(postData));
       this.authService.signup(postData).subscribe(data => {
         console.log(`this.data :: ${JSON.stringify(data)}`);
-        localStorage.setItem('token', JSON.stringify(data));
-        this.router.navigate(['/']);
+        this.router.navigate(['/account/signin']);
       });
   }
 }

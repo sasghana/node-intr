@@ -8,7 +8,8 @@ import { MatIconModule,
   MatProgressBarModule,
   MatMenuModule,
   MatTableModule,
-  MatSnackBarModule} from '@angular/material';
+  MatSnackBarModule,
+  MatGridListModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AgmCoreModule } from '@agm/core';
@@ -29,6 +30,7 @@ import { DashboardRoutes } from './dashboard.routing';
     MatMenuModule,
     MatTableModule,
     MatSnackBarModule,
+    MatGridListModule,
     AgmCoreModule,
     FlexLayoutModule,
     NgxChartsModule
