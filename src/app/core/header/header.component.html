@@ -2,7 +2,7 @@
   <button (click)="toggleSidenav.emit()" mat-icon-button #tooltip="matTooltip" matTooltip="Toggle navigation" matTooltipPosition="after" matTooltipShowDelay="300">
     <mat-icon>menu</mat-icon>
   </button>
-  <div class="branding">
+  <div class="branding" [ngStyle.xs]="{display: 'none'}">
     <!--<svg preserveAspectRatio="xMidYMid meet" width="180" height="40" viewBox="0 0 180 40">-->
       <!--<use xlink:href="#logo" />-->
     <!--</svg>-->
@@ -25,7 +25,7 @@
   </button>
   <button mat-button [routerLink]="['/']">{{ username }}</button>
   <button [matMenuTriggerFor]="user" mat-icon-button class="ml-xs" #tooltip="matTooltip" matTooltip="User links" matTooltipPosition="before" matTooltipShowDelay="300" class="ml-xs header-avatar">
-    <img src="assets/imagnes/face3.jpg" alt="" class="toolbar-avatar radius-circle">
+    <img src="assets/images/face3.jpg" alt="" class="toolbar-avatar radius-circle">
     <!--<img [src]="gravatar" alt="image" class="toolbar-avatar radius-circle" />-->
   </button>
 </mat-toolbar>
