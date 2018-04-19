@@ -91,7 +91,7 @@ const MENUITEMS = [
   },
   {
     type: 'title',
-    name: 'APPS'
+    name: 'APPlICATIONS'
   },
   {
     state: 'calendar',
@@ -113,7 +113,7 @@ const MENUITEMS = [
   },
   {
     state: 'gallery',
-    name: 'Gallery',
+    name: 'Photos',
     type: 'link',
     icon: ''
   },
@@ -125,7 +125,19 @@ const MENUITEMS = [
   },
   {
     state: 'buggedout',
-    name: 'Bugged Out',
+    name: 'Issue Tracker',
+    type: 'link',
+    icon: ''
+  },
+  {
+    state: 'software',
+    name: 'Softwares',
+    type: 'link',
+    icon: ''
+  },
+  {
+    state: 'booking',
+    name: 'Bookings',
     type: 'link',
     icon: ''
   },

@@ -36,6 +36,7 @@
     "@swimlane/ngx-charts": "7.0.1",
     "@swimlane/ngx-datatable": "11.1.7",
     "angular-calendar": "0.23.3",
+    "angular-router-animations": "0.0.4",
     "angular-tree-component": "7.0.1",
     "angular2-text-mask": "8.0.4",
     "angularfire2": "^5.0.0-rc.6",
@@ -46,7 +47,9 @@
     "classlist.js": "1.1.20150312",
     "core-js": "2.5.3",
     "cors": "^2.8.3",
+    "d3": "4.13.0",
     "dragula": "3.7.2",
+    "emoji-flags": "1.2.0",
     "express": "^4.15.2",
     "firebase": "^4.12.1",
     "gravatar": "^1.6.0",
@@ -75,9 +78,7 @@
     "sequelize": "^3.30.2",
     "winston": "^2.4.0",
     "winston-daily-rotate-file": "^1.7.2",
-    "zone.js": "0.8.20",
-    "d3": "4.13.0",
-    "emoji-flags": "1.2.0"
+    "zone.js": "0.8.20"
   },
   "devDependencies": {
     "@angular/cli": "^1.7.3",

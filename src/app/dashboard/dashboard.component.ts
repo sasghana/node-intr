@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import {
   MatSnackBar,
   MatSnackBarConfig,
@@ -11,7 +12,7 @@ import * as d3 from 'd3';
 import { colorSets } from '@swimlane/ngx-charts/release/utils/color-sets';
 import { COLORS, COLORSINVERT } from '../core';
 import { single, multi, generateData } from '../charts/data';
-// import { moveIn, fallIn, moveInLeft } from '../router.animation';
+import { moveIn, fallIn, fadeInOut, growShrink } from 'angular-router-animations';
 
 const ELEMENT_DATA: Element[] = [
 {
@@ -43,7 +44,8 @@ const ELEMENT_DATA: Element[] = [
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  animations: [moveIn(), fallIn(), fadeInOut(), growShrink()],
 })
 export class DashboardComponent {
 
@@ -141,7 +143,7 @@ export class DashboardComponent {
     config.horizontalPosition = this.horizontalPosition;
     config.duration = 5000;
 
-    this.snackBar.open('Welcome to Node, an Angular Material 2 Admin Template', '', config);
+    this.snackBar.open('Welcome to SAS Finance Group, Demo Intranet app', '', config);
   }
 
   get dateDataWithOrWithoutRange() {

@@ -1,24 +1,15 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  Router
-} from '@angular/router';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  FormControl
-} from '@angular/forms';
-import {
-  CustomValidators
-} from 'ng2-validation';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
+import {CustomValidators} from 'ng2-validation';
+import {fallIn, moveIn} from 'angular-router-animations';
+
 
 @Component({
   selector: 'app-forgot',
   templateUrl: './forgot.component.html',
-  styleUrls: ['./forgot.component.scss']
+  styleUrls: ['./forgot.component.scss'],
+  animations: [moveIn(), fallIn()]
 })
 export class ForgotComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
 import { NotificationService } from './notification.service';
@@ -17,16 +17,24 @@ export class HeaderComponent {
   @Output() toggleSidenav = new EventEmitter<void>();
 
   public config: PerfectScrollbarConfigInterface = {};
-
+  gravatar;
+  username;
+  currentUser: any;
   constructor(
     private authService: AuthService,
     private router: Router,
     public notificationService: NotificationService,
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon(
-        'search-icon',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/images/search.svg'));
+    iconRegistry.addSvgIcon('search-icon', sanitizer.bypassSecurityTrustResourceUrl('assets/images/search.svg'));
+    this.gravatar = localStorage.getItem('image');
+    this.username = localStorage.getItem('username');
+    console.log('****************************************');
+    console.log('toolbar gravatar >>>', this.gravatar);
+    console.log('toolbar username  >>>', this.username);
+    console.log('****************************************');
+
+
   }
 
   onLogout() {
@@ -34,4 +42,5 @@ export class HeaderComponent {
     this.router.navigateByUrl('/account/signin');
     console.log(`fare well`);
   }
+
 }

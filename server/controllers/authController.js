@@ -34,7 +34,9 @@ AuthController.signUp = function (req, res) {
         bio: req.body.bio,
         department: req.body.department,
         position: req.body.position,
-        joined: new Date().getTime()
+        joined: new Date().getTime(),
+        email_confirmed: 'false',
+        mobile_confirmed: 'false'
       };
 
       return User.create(newUser).then(function () {
@@ -46,7 +48,6 @@ AuthController.signUp = function (req, res) {
     });
   }
 }
-
 // Authenticate a user.
 AuthController.authenticateUser = function (req, res) {
   console.log("login request ~ ",req.body);
@@ -66,7 +67,7 @@ AuthController.authenticateUser = function (req, res) {
           if (isMatch && !error) {
             var token = jwt.sign({ username: user.username }, config.keys.secret, { expiresIn: '24h' });
 
-            res.json({ success: true, token: 'JWT ' + token, user: user.username, role: user.role });
+            res.json({ success: true, token: 'JWT ' + token, profile: user.toProfileJsonFor(), role: user.role });
 
           } else {
             res.status(404).json({ message: 'Login failed!' });
@@ -102,5 +103,48 @@ AuthController.people = function (req, res) {
             res.status(500).json(error);
         });
 }
+
+/**
+ * Change a users password
+ */
+AuthController.changePassword = function(req, res, next) {
+  var userId = req.user._id;
+  var oldPass = String(req.body.oldPassword);
+  var newPass = String(req.body.newPassword);
+
+  User.findById(userId, function (err, user) {
+    if(user.authenticate(oldPass)) {
+      user.password = newPass;
+      user.save(function(err) {
+        if (err) return validationError(res, err);
+        res.send(200);
+      });
+    } else {
+      res.send(403);
+    }
+  });
+};
+
+// reset a users password:
+
+AuthController.resetPassword = function(email) {
+  var chars="abcdefghijklmnopqrstuvwxyz123456789"
+  var newPass=''
+
+  for (var i = 0; i < 8; i++){
+    newPass += chars.charAt(Math.floor(Math.random() * chars.length))
+  }
+
+  User.findOne({email: email}, function (err, user) {
+    user.password = newPass;
+    user.save(function(err) {
+      if (err){
+        console.log("error saving password");
+      }
+    });
+  });
+
+  return newPass;
+};
 
 module.exports = AuthController;

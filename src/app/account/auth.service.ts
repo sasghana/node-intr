@@ -7,10 +7,6 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  // isLoggedIn() {
-  //   return localStorage.getItem('token') ? true : false;
-  // }
-
   isLoggedIn() {
     return localStorage.getItem('token') !== null;
   }

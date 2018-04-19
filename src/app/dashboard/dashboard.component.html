@@ -1,110 +1,111 @@
+<div [@fallIn]>
+  <mat-card>
+    <mat-grid-list cols="1" rowHeight="100px">
+      <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="3">
+        <mat-grid-tile-footer>
+          <h3 color="white">All Post </h3>&nbsp;
+          <h3 color="white"> Members </h3>
+          <span fxFlex></span>
+          <h3>More </h3>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
 
-<mat-card>
-  <mat-grid-list cols="1" rowHeight="100px">
-    <mat-grid-tile
-      [colspan]="1"
-      [rowspan]="3">
-      <mat-grid-tile-footer>
-        <h3 color="white">All Post </h3>&nbsp;
-        <h3 color="white"> Members </h3>
-        <span fxFlex></span>
-        <h3>More </h3>
-      </mat-grid-tile-footer>
-    </mat-grid-tile>
-  </mat-grid-list>
-</mat-card>
-
-<div fxLayout="row"  fxLayoutWrap="wrap">
-  <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="100" fxFlex="100">
-    <div fxLayout="column" fxLayoutWrap="wrap">
-      <div fxFlex="100">
-        <mat-card class="card-widget mat-purple">
-          <div mat-card-widget>
-            <div fxLayout="row" fxLayoutAlign="start center" class="w-100">
-              <div>
-                <h1 class="text-xxl mt-0 mb-0">
-                  <mat-icon class="block text-xxl w-auto h-auto">cloud</mat-icon>
-                </h1>
-              </div>
-              <div fxFlex class="mx-1 text-xs-right">
-                <h1 class="mt-0 mb-0">6 &deg;</h1>
-                <h5 class="mt-0 mb-0">Saturday 2:00 AM</h5>
-                <p class="text-md mt-0 mb-0">Mostly Sunny</p>
+  <div fxLayout="row"  fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="100" fxFlex="100">
+      <div fxLayout="column" fxLayoutWrap="wrap">
+        <div fxFlex="100">
+          <mat-card class="card-widget mat-purple">
+            <div mat-card-widget>
+              <div fxLayout="row" fxLayoutAlign="start center" class="w-100">
+                <div>
+                  <h1 class="text-xxl mt-0 mb-0">
+                    <mat-icon class="block text-xxl w-auto h-auto">cloud</mat-icon>
+                  </h1>
+                </div>
+                <div fxFlex class="mx-1 text-xs-right">
+                  <h1 class="mt-0 mb-0">6 &deg;</h1>
+                  <h5 class="mt-0 mb-0">Saturday 2:00 AM</h5>
+                  <p class="text-md mt-0 mb-0">Mostly Sunny</p>
+                </div>
               </div>
             </div>
-          </div>
-        </mat-card>
-      </div>
-      <div fxFlex="100">
-        <mat-card class="card-widget">
-          <div mat-card-widget>
-            <div fxLayout="row" fxLayoutAlign="start center" class="w-100">
-              <div>
-                <img src="assets/images/face1.jpg" class="block radius-circle" width="60" height="60">
-              </div>
-              <div fxFlex class="mx-1 text-xs-right">
-                <h1 class="mt-0 mb-0">Envato</h1>
-                <h5 class="mt-0 mb-0">hello@example.com</h5>
-                <p class="mat-text-muted text-md mt-0 mb-0">Administrator</p>
-              </div>
-            </div>
-          </div>
-        </mat-card>
-      </div>
-      <div fxFlex="100">
-        <mat-card class="card-widget mat-yellow">
-          <div mat-card-widget>
-            <div fxLayout="row" fxLayoutAlign="start center" class="w-100">
-              <div>
-                <mat-icon class="block text-xxl w-auto h-auto">filter_hdr</mat-icon>
-              </div>
-              <div fxFlex class="mx-1 text-xs-right">
-                <h2 class="mt-0 mb-0">Warning!</h2>
-                <h5 class="mt-0 mb-0">Error Code 404</h5>
-                <p class="mat-text-muted text-md mt-0 mb-0">Item Not Found</p>
-              </div>
-            </div>
-          </div>
-        </mat-card>
-      </div>
-    </div>
-
-  </div>
-  <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="100" fxFlex="100">
-    <mat-card>
-      <mat-card-title>Newsfeed</mat-card-title>
-      <mat-card-subtitle>Stories posted today</mat-card-subtitle>
-      <hr>
-      <mat-list>
-        <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
-          <mat-list-item>
-            <img mat-list-avatar src="{{item.photo}}" alt="">
-            <h3 matLine> {{item.from}} </h3>
-            <p matLine> {{item.subject}} - {{item.message}} </p>
-          </mat-list-item>
-        </ng-template>
-      </mat-list>
-    </mat-card>
-  </div>
-  <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="50" fxFlex="100">
-    <mat-card>
-      <div class="card-image-header bg-image bg-image-signup" style="height: 213px;"></div>
-      <mat-card-content class="text-xs-center">
-        <div fxLayout="row"  fxLayoutWrap="wrap" class="text-uppercase">
-          <div fxFlex="33.33%">
-            <h2 class="mt-0 mb-0">24</h2>
-            <p class="mt-0 mb-0 text-md mat-text-muted">Comments</p>
-          </div>
-          <div fxFlex="33.33%">
-            <h2 class="mt-0 mb-0">45</h2>
-            <p class="mt-0 mb-0 text-md mat-text-muted">Likes</p>
-          </div>
-          <div fxFlex="33.33%">
-            <h2 class="mt-0 mb-0">984</h2>
-            <p class="mt-0 mb-0 text-md mat-text-muted">Shares</p>
-          </div>
+          </mat-card>
         </div>
-      </mat-card-content>
-    </mat-card>
+        <div fxFlex="100">
+          <mat-card class="card-widget">
+            <div mat-card-widget>
+              <div fxLayout="row" fxLayoutAlign="start center" class="w-100">
+                <div>
+                  <img src="assets/images/face1.jpg" class="block radius-circle" width="60" height="60">
+                </div>
+                <div fxFlex class="mx-1 text-xs-right">
+                  <h1 class="mt-0 mb-0">Envato</h1>
+                  <h5 class="mt-0 mb-0">hello@example.com</h5>
+                  <p class="mat-text-muted text-md mt-0 mb-0">Administrator</p>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+        <div fxFlex="100">
+          <mat-card class="card-widget mat-yellow">
+            <div mat-card-widget>
+              <div fxLayout="row" fxLayoutAlign="start center" class="w-100">
+                <div>
+                  <mat-icon class="block text-xxl w-auto h-auto">filter_hdr</mat-icon>
+                </div>
+                <div fxFlex class="mx-1 text-xs-right">
+                  <h2 class="mt-0 mb-0">Warning!</h2>
+                  <h5 class="mt-0 mb-0">Error Code 404</h5>
+                  <p class="mat-text-muted text-md mt-0 mb-0">Item Not Found</p>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+
+    </div>
+    <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card>
+        <mat-card-title>Newsfeed</mat-card-title>
+        <mat-card-subtitle>Stories posted today</mat-card-subtitle>
+        <hr>
+        <mat-list>
+          <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
+            <mat-list-item>
+              <img mat-list-avatar src="{{item.photo}}" alt="">
+              <h3 matLine> {{item.from}} </h3>
+              <p matLine> {{item.subject}} - {{item.message}} </p>
+            </mat-list-item>
+          </ng-template>
+        </mat-list>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-card>
+        <div class="card-image-header bg-image bg-image-signup" style="height: 213px;"></div>
+        <mat-card-content class="text-xs-center">
+          <div fxLayout="row"  fxLayoutWrap="wrap" class="text-uppercase">
+            <div fxFlex="33.33%">
+              <h2 class="mt-0 mb-0">24</h2>
+              <p class="mt-0 mb-0 text-md mat-text-muted">Comments</p>
+            </div>
+            <div fxFlex="33.33%">
+              <h2 class="mt-0 mb-0">45</h2>
+              <p class="mt-0 mb-0 text-md mat-text-muted">Likes</p>
+            </div>
+            <div fxFlex="33.33%">
+              <h2 class="mt-0 mb-0">984</h2>
+              <p class="mt-0 mb-0 text-md mat-text-muted">Shares</p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>

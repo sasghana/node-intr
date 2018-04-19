@@ -14,7 +14,7 @@ var modelDefinition = {
   description: { type: Sequelize.STRING},
   body: { type: Sequelize.TEXT},
   reference:{ type: Sequelize.STRING, unique: true },
-  makerId:{ type: Sequelize.STRING },
+  userId:{ type: Sequelize.STRING },
   comment:{ type: Sequelize.STRING },
   favoriteCount: { type: Sequelize.STRING, defaultValue: 0 },
   tagList:{ type: Sequelize.STRING },
@@ -22,8 +22,8 @@ var modelDefinition = {
   urLink: { type: Sequelize.STRING },
   fileUpload: { type: Sequelize.TEXT },
   otherInfo:{ type: Sequelize.TEXT },
-    views: { type: Sequelize.STRING, defaultValue: 0 },
-    upVotes: { type: Sequelize.STRING, defaultValue: 0 }
+  views: { type: Sequelize.STRING, defaultValue: 0 },
+  upVotes: { type: Sequelize.STRING, defaultValue: 0 }
 };
 
 // 2: The model options.
@@ -34,11 +34,11 @@ var modelOptions = {
 };
 
 // 3: Define the User model.
-var MakeModel = db.define('make', modelDefinition, modelOptions);
+var PostModel = db.define('post', modelDefinition, modelOptions);
 
 function associate(models) {
   MakeModel.belongsTo(models.UserModel,{
     onDelete: 'cascade'
   })
 }
-module.exports = MakeModel;
+module.exports = PostModel;

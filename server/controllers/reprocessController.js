@@ -6,7 +6,7 @@
 var config = require('../config'),
   request = require('request'),
   db = require('../models/database'),
-  Maker = require('../models/make'),
+  Maker = require('../models/post'),
   ReprocessController = {};
 
 // send maker post to vasapp
@@ -85,11 +85,11 @@ ReprocessController.doTransaction = function (req, res) {
               reference:{
                 $like: req.body.reference
               }
-               
+
             }
           }
         );
-      } 
+      }
 
     }
   });

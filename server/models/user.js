@@ -21,6 +21,7 @@ var modelDefinition = {
   department: { type: Sequelize.STRING},
   status: {type: Sequelize.BOOLEAN, defaultValue: true },
   following: { type: Sequelize.STRING },
+  followers: { type: Sequelize.STRING },
   like:{ type: Sequelize.STRING },
   group: { type: Sequelize.STRING},
   role: {
@@ -42,7 +43,8 @@ var modelDefinition = {
 // 2: The model options.
 var modelOptions = {
   instanceMethods: {
-    comparePasswords: comparePasswords
+    comparePasswords: comparePasswords,
+    toProfileJsonFor: toProfileJsonFor
   },
   hooks: {
     beforeValidate: hashPassword
@@ -66,6 +68,22 @@ function comparePasswords(password, callback) {
   });
 }
 
+function toProfileJsonFor() {
+  return{
+    username: this.username,
+    firstName: this.firstName,
+    middleName: this.middleName,
+    lastName: this.lastName,
+    mobile: this.mobile,
+    email: this.email,
+    department: this.department,
+    position: this.position,
+    bio: this.bio,
+    gravatar: this.gravatar,
+    following: 'false',
+    status: this.status
+  }
+}
 // Hashes the password for a user object.
 function hashPassword(user) {
   if(user.changed('password')) {

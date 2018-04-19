@@ -7,11 +7,15 @@ import {CustomValidators} from 'ng2-validation';
 
 const password = new FormControl('', Validators.required);
 const confirmPassword = new FormControl('', CustomValidators.equalTo(password));
+import { moveIn, fallIn, fadeInOut, growShrink } from 'angular-router-animations';
+
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss'],
+  animations: [moveIn(), fallIn(), fadeInOut(), growShrink()],
+
 })
 export class SignupComponent implements OnInit {
 

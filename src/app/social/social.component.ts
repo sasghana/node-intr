@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-// import { moveIn, fallIn, moveInLeft } from '../router.animation';
+import { moveIn, fallIn, fadeInOut, growShrink } from 'angular-router-animations';
 
 @Component({
   selector: 'app-social',
   templateUrl: './social.component.html',
   styleUrls: ['./social.component.scss'],
-
+  animations: [moveIn(), fallIn(), fadeInOut(), growShrink()],
 })
 export class SocialComponent {
 

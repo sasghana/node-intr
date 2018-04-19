@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatIconModule, MatCardModule, MatInputModule, MatCheckboxModule, MatButtonModule } from '@angular/material';
+import { MatIconModule, MatCardModule, MatInputModule, MatCheckboxModule, MatButtonModule, MatSnackBarModule } from '@angular/material';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -20,6 +21,7 @@ import { SignupComponent } from './signup/signup.component';
     MatInputModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatSnackBarModule,
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule
