@@ -6,7 +6,7 @@
     <!--<svg preserveAspectRatio="xMidYMid meet" width="180" height="40" viewBox="0 0 180 40">-->
       <!--<use xlink:href="#logo" />-->
     <!--</svg>-->
-    <img src="assets/images/image002.jpg" alt="logo"  width="80%">
+    <img src="assets/images/brand.png" alt="logo"  width="100%">
   </div>
   <div class="search-bar" fxFlex>
     <form class="search-form" [ngStyle.xs]="{display: 'none'}">
@@ -23,7 +23,9 @@
   <button [matMenuTriggerFor]="notifications" mat-icon-button class="ml-xs overflow-visible" #tooltip="matTooltip" matTooltip="User notifications" matTooltipPosition="before" matTooltipShowDelay="300">
     <mat-icon>notifications</mat-icon>
   </button>
-  <button mat-button [routerLink]="['/']">{{ username }}</button>
+  <!--<button mat-button [routerLink]="['/']">{{ username }}</button>-->
+  <span><h4><em>{{username}}</em></h4></span>
+
   <button [matMenuTriggerFor]="user" mat-icon-button class="ml-xs" #tooltip="matTooltip" matTooltip="User links" matTooltipPosition="before" matTooltipShowDelay="300" class="ml-xs header-avatar">
     <img src="assets/images/face3.jpg" alt="" class="toolbar-avatar radius-circle">
     <!--<img [src]="gravatar" alt="image" class="toolbar-avatar radius-circle" />-->
