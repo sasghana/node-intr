@@ -37,7 +37,7 @@ var modelOptions = {
 var PostModel = db.define('post', modelDefinition, modelOptions);
 
 function associate(models) {
-  MakeModel.belongsTo(models.UserModel,{
+  PostModel.belongsTo(models.UserModel,{
     onDelete: 'cascade'
   })
 }
