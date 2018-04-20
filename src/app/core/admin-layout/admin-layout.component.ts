@@ -85,7 +85,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
   }
 
   setTitle( newTitle: string) {
-    this.titleService.setTitle(newTitle + ' | Node - Angular Material 2 Admin Template');
+    this.titleService.setTitle(newTitle + ' | SAS - Staff Intranet');
   }
 
   receiveMessage($event): void {
