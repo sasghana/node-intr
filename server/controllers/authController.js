@@ -56,8 +56,8 @@ AuthController.authenticateUser = function (req, res) {
        .json({ message: 'Username and password are needed!' });
   } else {
     var username = req.body.username,
-      password = req.body.password,
-      potentialUser = { where: { username: username } };
+        password = req.body.password,
+        potentialUser = { where: { username: username } };
 
     User.findOne(potentialUser).then(function (user) {
       if (!user) {
