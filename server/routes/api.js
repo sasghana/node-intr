@@ -9,7 +9,7 @@ var config = require('../config'),
     AdminController = require('../controllers/adminController'),
     ReprocessController = require('../controllers/reprocessController'),
     NodeMailController = require('../controllers/nodeMailer');
-    
+
 var APIRoutes = function(passport) {
     // POST Routes.
     router.post('/signup', AuthController.signUp);
@@ -21,7 +21,7 @@ var APIRoutes = function(passport) {
     router.post('/mail', NodeMailController.doPost);
 
     // GET Routes.
-    router.get('/peoples', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.admin, AuthController.peoples ));
+    router.get('/peoples', AuthController.peoples );
     router.get('/people/:id', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.admin, AuthController.people ));
     router.get('/profile', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.user, UserController.index));
     router.get('/admin', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.admin, AdminController.index));

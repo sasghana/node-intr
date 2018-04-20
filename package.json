@@ -9,7 +9,9 @@
     "dev": "nodemon server.js",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build"
+
   },
   "private": true,
   "dependencies": {
@@ -78,11 +80,11 @@
     "sequelize": "^3.30.2",
     "winston": "^2.4.0",
     "winston-daily-rotate-file": "^1.7.2",
-    "zone.js": "0.8.20"
+    "zone.js": "0.8.20",
+    "@angular/cli": "^1.7.3",
+    "@angular/compiler-cli": "5.2.3"
   },
   "devDependencies": {
-    "@angular/cli": "^1.7.3",
-    "@angular/compiler-cli": "5.2.3",
     "@angular/language-service": "5.2.3",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
