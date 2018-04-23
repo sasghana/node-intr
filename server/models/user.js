@@ -36,7 +36,9 @@ var modelDefinition = {
   blocked: {
     type: Sequelize.STRING,
     defaultValue: 'active'
-  }
+  },
+  gender: { type: Sequelize.STRING},
+  dateOfBirth: {type: Sequelize.DATE}
 
 };
 

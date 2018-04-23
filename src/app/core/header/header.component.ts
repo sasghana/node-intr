@@ -34,7 +34,6 @@ export class HeaderComponent {
     console.log('toolbar username  >>>', this.username);
     console.log('****************************************');
 
-
   }
 
   onLogout() {

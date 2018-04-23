@@ -124,10 +124,15 @@ const MENUITEMS = [
     icon: '',
   },
   {
-    state: 'buggedout',
+    state: 'tables',
     name: 'Issue Tracker',
-    type: 'link',
-    icon: ''
+    type: 'sub',
+    icon: 'format_line_spacing',
+    badge: [{type: 'blue-grey', value: '6'}],
+    children: [
+      {state: 'filter', name: 'Post Issue'},
+      {state: 'fullscreen', name: 'Admin'}
+    ]
   },
   {
     state: 'software',

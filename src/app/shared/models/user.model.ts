@@ -6,9 +6,11 @@ export interface User {
   username: string;
   password: string;
   mobile: string;
+  gender?: string;
   bio: string;
   department: string;
   position: string;
   gravatar: any;
+  dateOfBirth?: any;
   token?: string;
 }

@@ -52,7 +52,14 @@ export class SigninComponent implements OnInit {
       localStorage.setItem('role', data['role']);
       localStorage.setItem('image', data['profile'].gravatar);
       localStorage.setItem('username', data['profile'].username);
-
+      localStorage.setItem('firstName', data['profile'].firstName);
+      localStorage.setItem('lastName', data['profile'].lastName);
+        localStorage.setItem('email', data['profile'].email);
+        localStorage.setItem('mobile', data['profile'].mobile);
+        localStorage.setItem('department', data['profile'].department);
+        localStorage.setItem('bio', data['profile'].bio);
+        localStorage.setItem('status', data['profile'].status);
+        localStorage.setItem('position', data['profile'].position);
       console.log('get tokenFromStorage:: ', localStorage.getItem('token') );
       console.log('get role :: ', localStorage.getItem('role') );
       // console.log('get profile :: ', localStorage.getItem('profile') );
@@ -65,7 +72,7 @@ export class SigninComponent implements OnInit {
       },
       error => {
         console.log(`Error Login :: ${JSON.stringify(error)}`);
-        this.snackBar.open(`${JSON.stringify(error.error['message'])}`, '', this.config);
+        this.snackBar.open(`${error.error['message']}`, '', this.config);
         this.form.reset();
       }
     );

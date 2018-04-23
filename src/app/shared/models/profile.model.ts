@@ -11,4 +11,6 @@ export interface Profile {
   gravatar: any;
   following: boolean;
   status: boolean;
+  gender: string;
+  dateOfBirth: any;
 }

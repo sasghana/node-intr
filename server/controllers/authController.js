@@ -36,7 +36,9 @@ AuthController.signUp = function (req, res) {
         position: req.body.position,
         joined: new Date().getTime(),
         email_confirmed: 'false',
-        mobile_confirmed: 'false'
+        mobile_confirmed: 'false',
+        gender: req.body.gender,
+        dateOfBirth: req.body.dateOfBirth
       };
 
       return User.create(newUser).then(function () {

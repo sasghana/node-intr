@@ -301,6 +301,14 @@ var SigninComponent = /** @class */ (function () {
             localStorage.setItem('role', data['role']);
             localStorage.setItem('image', data['profile'].gravatar);
             localStorage.setItem('username', data['profile'].username);
+            localStorage.setItem('firstName', data['profile'].firstName);
+            localStorage.setItem('lastName', data['profile'].lastName);
+            localStorage.setItem('email', data['profile'].email);
+            localStorage.setItem('mobile', data['profile'].mobile);
+            localStorage.setItem('department', data['profile'].department);
+            localStorage.setItem('bio', data['profile'].bio);
+            localStorage.setItem('status', data['profile'].status);
+            localStorage.setItem('position', data['profile'].position);
             console.log('get tokenFromStorage:: ', localStorage.getItem('token'));
             console.log('get role :: ', localStorage.getItem('role'));
             // console.log('get profile :: ', localStorage.getItem('profile') );
@@ -310,7 +318,7 @@ var SigninComponent = /** @class */ (function () {
             _this.router.navigate(['/social']);
         }, function (error) {
             console.log("Error Login :: " + JSON.stringify(error));
-            _this.snackBar.open("" + JSON.stringify(error.error['message']), '', _this.config);
+            _this.snackBar.open("" + error.error['message'], '', _this.config);
             _this.form.reset();
         });
     };

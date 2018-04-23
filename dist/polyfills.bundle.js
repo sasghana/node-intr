@@ -6125,7 +6125,7 @@ global.IntlPolyfill = __webpack_require__("./node_modules/intl/lib/core.js");
 
 // Require all locale data for `Intl`. This module will be
 // ignored when bundling for the browser with Browserify/Webpack.
-__webpack_require__(2);
+__webpack_require__(0);
 
 // hack to export the polyfill as global Intl if needed
 if (!global.Intl) {
@@ -13676,20 +13676,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./src/polyfills.ts");
 
 
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
 /***/ })
 
-},[1]);
+},[2]);
 //# sourceMappingURL=polyfills.bundle.js.map
