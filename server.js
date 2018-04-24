@@ -28,7 +28,7 @@ hookJWTStrategy(passport);
 
 // Set the static files location.
 // Serve static files
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '/dist/')));
 app.use('/api', require('./server/routes/api')(passport));// Bundle API routes.
 
 // Catch all route.
