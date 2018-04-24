@@ -38,6 +38,6 @@ app.get('*', (req, res) => {
 });
 
 // Start the server.
-app.listen('8080', function () {
-  console.log('Magic happens at http://localhost:8080');
+app.listen('3000', function () {
+  console.log('Magic happens at http://localhost:3000');
 });
