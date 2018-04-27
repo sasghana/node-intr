@@ -100,11 +100,17 @@ const MENUITEMS = [
     icon: ''
   },
   {
-    state: 'messages',
-    name: 'MESSAGES',
-    type: 'link',
-    icon: ''
+    state: 'tables',
+    name: 'Issue Tracker',
+    type: 'sub',
+    icon: 'format_line_spacing',
+    badge: [{type: 'blue-grey', value: '6'}],
+    children: [
+      {state: 'filter', name: 'Post Issue'},
+      {state: 'fullscreen', name: 'Admin'}
+    ]
   },
+
   {
     state: 'taskboard',
     name: 'TASKBOARD',
@@ -122,17 +128,6 @@ const MENUITEMS = [
     name: 'File Manager',
     type: 'link',
     icon: '',
-  },
-  {
-    state: 'tables',
-    name: 'Issue Tracker',
-    type: 'sub',
-    icon: 'format_line_spacing',
-    badge: [{type: 'blue-grey', value: '6'}],
-    children: [
-      {state: 'filter', name: 'Post Issue'},
-      {state: 'fullscreen', name: 'Admin'}
-    ]
   },
   {
     state: 'software',

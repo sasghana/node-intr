@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-table-filter',
   templateUrl: './table-filter.component.html',
-  styleUrls: ['./table-filter.component.scss']
+  styleUrls: ['./table-filter.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  preserveWhitespaces: false,
 })
 export class TableFilterComponent {
   rows = [];
@@ -15,8 +18,7 @@ export class TableFilterComponent {
     { name: 'Company' },
     { name: 'Gender' }
   ];
-
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.fetch((data) => {
       // cache our list
       this.temp = [...data];
@@ -24,6 +26,7 @@ export class TableFilterComponent {
       this.rows = data;
     });
   }
+
 
   fetch(cb) {
     const req = new XMLHttpRequest();
@@ -45,4 +48,14 @@ export class TableFilterComponent {
     // update the rows
     this.rows = temp;
   }
+}
+
+export class ExpansionDemoComponent {
+  displayMode = 'default';
+  multi = false;
+  hideToggle = false;
+  disabled = false;
+  showPanel3 = true;
+  expandedHeight: string;
+  collapsedHeight: string;
 }

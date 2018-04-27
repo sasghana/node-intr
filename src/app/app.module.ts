@@ -49,6 +49,8 @@ import { AppComponent } from './app.component';
 import {SharedModule} from './shared/shared.module';
 import {AuthService} from './account/auth.service';
 import {AuthGuard} from './account/auth-guard.service';
+import {Ng2FabSpeedDialModule} from 'ng2-fab-speed-dial';
+import {EcoFabSpeedDialModule} from '@ecodev/fab-speed-dial';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -101,7 +103,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LoadingBarModule.forRoot(),
     AgmCoreModule.forRoot({apiKey: 'AIzaSyAsQi8vzHfqrt33xQww77MN1Bg84iLSeOM'}),
     PerfectScrollbarModule,
-    SharedModule
+    SharedModule,
+    Ng2FabSpeedDialModule,
+    EcoFabSpeedDialModule
   ],
   providers: [
     {

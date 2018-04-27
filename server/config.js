@@ -4,31 +4,31 @@ var nodemailer = require('nodemailer'),
     config = module.exports;
 
 
-config.db = {
-  user: 'areash5_peprah',
-  password: 'digimas14',
-  name: 'areash5_intr'
-};
-
-config.db.details = {
-  host: '172.81.119.95',
-  port: 3306,
-  dialect: 'mysql'
-};
-
-
 // config.db = {
-//     user: 'root',
-//     password: 'digimas14',
-//     name: 'sas18_intranet'
+//   user: 'areash5_peprah',
+//   password: 'digimas14',
+//   name: 'areash5_intr'
 // };
 //
 // config.db.details = {
-//     host: 'localhost',
-//     port: 3306,
-//     dialect: 'mysql',
-//     operatorsAliases: false
+//   host: '172.81.119.95',
+//   port: 3306,
+//   dialect: 'mysql'
 // };
+
+
+config.db = {
+    user: 'root',
+    password: 'digimas14',
+    name: 'sas18_intranet'
+};
+
+config.db.details = {
+    host: 'localhost',
+    port: 3306,
+    dialect: 'mysql',
+    operatorsAliases: false
+};
 
 config.db.production = {
   url: 'postgres://kmjeplse:YD8y25wAiRzmhZlN7eOSTZFpYWnISFOu@horton.elephantsql.com:5432/kmjeplse',
