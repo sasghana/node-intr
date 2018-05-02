@@ -13,11 +13,24 @@ export class TableFilterComponent {
 
   temp = [];
 
+  // columns = [
+  //   { prop: 'name' },
+  //   { name: 'Company' },
+  //   { name: 'Gender' },
+  // ];
+
   columns = [
-    { prop: 'name' },
-    { name: 'Company' },
-    { name: 'Gender' }
+    { prop: 'id' },
+    { name: 'title' },
+    { name: 'status' },
+    { name: 'priority' },
+    { name: 'assignee' },
+    { name: 'description'},
+    { name: 'department'},
+    { name: 'ticket'},
+    { name: 'date'}
   ];
+  username: string;
   constructor(public dialog: MatDialog) {
     this.fetch((data) => {
       // cache our list
@@ -25,12 +38,12 @@ export class TableFilterComponent {
       // push our inital complete list
       this.rows = data;
     });
+    this.username = localStorage.getItem('username');
   }
-
 
   fetch(cb) {
     const req = new XMLHttpRequest();
-    req.open('GET', `assets/data/company.json`);
+    req.open('GET', `assets/data/issuetracker.json`);
 
     req.onload = () => {
       cb(JSON.parse(req.response));

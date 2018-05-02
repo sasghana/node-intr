@@ -1,57 +1,4 @@
-<!--<mat-card class="demo-card demo-basic">-->
-  <!--<mat-card-content>-->
-    <!--<form>-->
-      <!--<mat-form-field class="demo-full-width">-->
-        <!--<input matInput placeholder="Company (disabled)" disabled value="Google">-->
-      <!--</mat-form-field>-->
-
-      <!--<table style="width: 100%" cellspacing="10">-->
-        <!--<tr>-->
-          <!--<td>-->
-            <!--<mat-form-field style="width: 90%">-->
-              <!--<input matInput placeholder="First name">-->
-            <!--</mat-form-field>-->
-          <!--</td>-->
-          <!--<td>-->
-            <!--<mat-form-field style="width: 90%">-->
-              <!--<input matInput placeholder="Long Last Name That Will Be Truncated">-->
-            <!--</mat-form-field>-->
-          <!--</td>-->
-        <!--</tr>-->
-      <!--</table>-->
-      <!--<p>-->
-        <!--<mat-form-field class="demo-full-width">-->
-          <!--<textarea matInput placeholder="Address">1600 Amphitheatre Pkway</textarea>-->
-        <!--</mat-form-field>-->
-        <!--<mat-form-field class="demo-full-width">-->
-          <!--<textarea matInput placeholder="Address 2"></textarea>-->
-        <!--</mat-form-field>-->
-      <!--</p>-->
-      <!--<table style="width: 100%" cellspacing="0"><tr>-->
-        <!--<td>-->
-          <!--<mat-form-field class="demo-full-width">-->
-            <!--<input matInput placeholder="City" value="Mountain View">-->
-          <!--</mat-form-field>-->
-        <!--</td>-->
-        <!--<td>-->
-          <!--<mat-form-field class="demo-full-width">-->
-            <!--<input matInput placeholder="State" maxLength="2" value="CA">-->
-          <!--</mat-form-field>-->
-        <!--</td>-->
-        <!--<td>-->
-          <!--<mat-form-field class="demo-full-width">-->
-            <!--<input matInput #postalCode maxLength="5" placeholder="Postal Code" value="94043"-->
-                   <!--pattern="[0-9]{5}">-->
-            <!--<mat-hint align="end">-->
-              <!--<mat-icon>mode_edit</mat-icon>-->
-              <!--<span aria-live="polite">{{postalCode.value.length}} / 5</span>-->
-            <!--</mat-hint>-->
-          <!--</mat-form-field>-->
-        <!--</td>-->
-        <!--</tr>-->
-      <!--</table>-->
-    <!--</form>-->
-  <!--</mat-card-content>-->
+<mat-card class="demo-card demo-basic">
 
 <!--<mat-card>-->
   <!--<mat-toolbar class="text-base">matAccordion</mat-toolbar>-->
@@ -83,13 +30,70 @@
 
 <mat-accordion [multi]="multi" class="mat-expansion-demo-width">
   <mat-expansion-panel #panel1  [hideToggle]="hideToggle">
-    <mat-expansion-panel-header>Section 1</mat-expansion-panel-header>
+    <mat-expansion-panel-header>Create <em> &nbsp; Issue</em> </mat-expansion-panel-header>
+    <form>
+      <div class="px-xs pb-1">
+        <mat-form-field class="w-100">
+          <input matInput placeholder="Title">
+        </mat-form-field>
+      </div>
 
-    <p>This is the content text that makes sense here.</p>
+      <div fxLayout="row" fxLayoutWrap="wrap" class="w-100 pb-1">
+        <div fxFlex="50" class="px-xs">
+          <mat-form-field class="w-100" floatLabel="">
+            <input matInput placeholder="Reported By" value="{{username}}">
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" class="px-xs">
+          <mat-form-field class="w-100">
+            <input matInput placeholder="Status">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="w-100 pb-1">
+        <div fxFlex="50" class="px-xs">
+          <mat-form-field class="w-100">
+            <textarea matInput placeholder="Issue Description"></textarea>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" class="px-xs">
+          <mat-form-field class="w-100">
+            <textarea matInput placeholder="Areas Affected"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="w-100">
+        <div fxFlex="33.33">
+          <mat-form-field class="w-100" class="px-xs">
+            <input matInput placeholder="Assign To" value="Ayisi">
+          </mat-form-field>
+        </div>
+        <div fxFlex="33.33" class="px-xs">
+          <mat-form-field class="w-100">
+            <input matInput placeholder="Departement" maxLength="18" value="IT">
+          </mat-form-field>
+        </div>
+        <div fxFlex="33.33" class="px-xs">
+          <mat-form-field class="w-100">
+            <input matInput #postalCode maxLength="5" placeholder="Priority" value="5"
+                   pattern="[0-9]{5}">
+            <mat-hint align="end">
+              <mat-icon>mode_edit</mat-icon>
+              <span aria-live="polite">{{postalCode.value.length}} / 5</span>
+            </mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" type="submit" >Submit</button>
+
+    </form>
+
   </mat-expansion-panel>
 
   <mat-expansion-panel #panel2 [hideToggle]="hideToggle" [disabled]="disabled">
-    <mat-expansion-panel-header>Section 2</mat-expansion-panel-header>
+    <mat-expansion-panel-header>View Reported <em> &nbsp;Issues</em></mat-expansion-panel-header>
     <ngx-datatable
       class='material'
       [columns]="columns"
