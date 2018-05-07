@@ -19,7 +19,15 @@ export class HeaderComponent {
   public config: PerfectScrollbarConfigInterface = {};
   gravatar;
   username;
+  email;
   currentUser: any;
+  gravatarName;
+  customStyle = {
+    width: "40px",
+    height: "40px",
+    lineHeight: "24px",
+    display: "block"
+  };
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -29,10 +37,16 @@ export class HeaderComponent {
     iconRegistry.addSvgIcon('search-icon', sanitizer.bypassSecurityTrustResourceUrl('assets/images/search.svg'));
     this.gravatar = localStorage.getItem('image');
     this.username = localStorage.getItem('username');
+    this.email = localStorage.getItem('email');
     console.log('****************************************');
     console.log('toolbar gravatar >>>', this.gravatar);
     console.log('toolbar username  >>>', this.username);
+    console.log('toolbar email  >>>', this.email);
+
     console.log('****************************************');
+    let avatar  = sanitizer.bypassSecurityTrustResourceUrl('this.gravatar');
+    let gravatarName  = localStorage.getItem('firstName') + localStorage.getItem('lastName');
+    console.log('gravatarName  >>>', this.gravatarName);
 
   }
 

@@ -20,7 +20,11 @@ var modelDefinition = {
   position: { type: Sequelize.STRING},
   department: { type: Sequelize.STRING},
   status: {type: Sequelize.BOOLEAN, defaultValue: true },
-  following: { type: Sequelize.STRING },
+  following: {
+    type: Sequelize.STRING,
+    references: { model: "UserModel", key: "id" }, //by default primary key is taken id
+    onDelete: "cascade"
+  },
   followers: { type: Sequelize.STRING },
   like:{ type: Sequelize.STRING },
   group: { type: Sequelize.STRING},
@@ -33,10 +37,7 @@ var modelDefinition = {
   email_confirmed: { type: Sequelize.BOOLEAN },
   mobile_confirmed: { type: Sequelize.BOOLEAN},
   secret: { type: Sequelize.STRING},
-  blocked: {
-    type: Sequelize.STRING,
-    defaultValue: 'active'
-  },
+  blocked: {type: Sequelize.STRING, defaultValue: 'active'},
   gender: { type: Sequelize.STRING},
   dateOfBirth: {type: Sequelize.DATE}
 
@@ -97,9 +98,7 @@ function hashPassword(user) {
 
 function associate(models) {
   //A User can have many Makes.
-  UserModel.hasMany(models.MakeModel, {
-    onDelete: 'cascade'
-  });
+  UserModel.hasMany(models.MakeModel, {onDelete: 'cascade'});
 }
 
 module.exports = UserModel;

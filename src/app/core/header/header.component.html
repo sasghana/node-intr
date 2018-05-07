@@ -23,12 +23,15 @@
   <button [matMenuTriggerFor]="notifications" mat-icon-button class="ml-xs overflow-visible" #tooltip="matTooltip" matTooltip="User notifications" matTooltipPosition="before" matTooltipShowDelay="300">
     <mat-icon>notifications</mat-icon>
   </button>
-  <!--<button mat-button [routerLink]="['/']">{{ username }}</button>-->
-  <span><h4><em>{{username}}</em></h4></span>
+  <button mat-button ><em>{{ username }}</em></button>
+  <!--<span><h4><em>{{username}}</em></h4></span>-->
 
   <button [matMenuTriggerFor]="user" mat-icon-button class="ml-xs" #tooltip="matTooltip" matTooltip="User links" matTooltipPosition="before" matTooltipShowDelay="300" class="ml-xs header-avatar">
-    <img src="assets/images/face3.jpg" alt="" class="toolbar-avatar radius-circle">
+    <!--<img src="assets/images/face4.jpg" alt="" class="toolbar-avatar radius-circle">-->
     <!--<img [src]="gravatar" alt="image" class="toolbar-avatar radius-circle" />-->
+    <!--<img [src]="avatar" alt="avatar" class="toolbar-avatar radius-circle"/>-->
+    <ngx-avatar gravatarId="{{email}}" [style]="customStyle"></ngx-avatar>
+
   </button>
 </mat-toolbar>
 

@@ -19,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SocialRoutes } from './social.routing';
 import { SocialComponent } from './social.component';
+import {AvatarModule} from "ngx-avatar";
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { SocialComponent } from './social.component';
     MatTabsModule,
     MatDialogModule,
     MatExpansionModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AvatarModule
   ],
   declarations: [
     SocialComponent,

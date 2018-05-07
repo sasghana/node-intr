@@ -51,6 +51,7 @@ import {AuthService} from './account/auth.service';
 import {AuthGuard} from './account/auth-guard.service';
 import {Ng2FabSpeedDialModule} from 'ng2-fab-speed-dial';
 import {EcoFabSpeedDialModule} from '@ecodev/fab-speed-dial';
+import {AvatarModule} from "ngx-avatar";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -105,7 +106,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PerfectScrollbarModule,
     SharedModule,
     Ng2FabSpeedDialModule,
-    EcoFabSpeedDialModule
+    EcoFabSpeedDialModule,
+    AvatarModule
+
   ],
   providers: [
     {
