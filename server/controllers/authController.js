@@ -110,7 +110,7 @@ AuthController.people = function (req, res) {
  * Change a users password
  */
 AuthController.changePassword = function(req, res, next) {
-  var userId = req.user._id;
+  var userId = req.userId;
   var oldPass = String(req.body.oldPassword);
   var newPass = String(req.body.newPassword);
 

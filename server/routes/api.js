@@ -22,7 +22,7 @@ var APIRoutes = function(passport) {
 
     // GET Routes.
     router.get('/peoples', AuthController.peoples );
-    router.get('/people/:id', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.admin, AuthController.people ));
+    router.get('/people/:id', AuthController.people );
     router.get('/profile', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.user, UserController.index));
     router.get('/admin', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.admin, AdminController.index));
     router.get('/makers', ReprocessController.doGetAllMaker);

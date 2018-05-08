@@ -1,4 +1,5 @@
 export interface Profile {
+  id: any;
   username: string;
   firstName: string,
   middleName: string,
@@ -8,8 +9,10 @@ export interface Profile {
   department: any,
   position: string,
   bio: string;
-  gravatar: any;
-  following: boolean;
-  status: boolean;
-
+  gravatar?: any;
+  following?: boolean;
+  followers?: any;
+  status?: boolean;
+  groups?: any;
+  posts?: any;
 }
