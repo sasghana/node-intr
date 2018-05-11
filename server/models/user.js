@@ -84,7 +84,8 @@ function toProfileJsonFor() {
     bio: this.bio,
     gravatar: this.gravatar,
     following: 'false',
-    status: this.status
+    status: this.status,
+    joined: this.joined
   }
 }
 // Hashes the password for a user object.

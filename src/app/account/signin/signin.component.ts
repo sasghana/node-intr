@@ -49,6 +49,7 @@ export class SigninComponent implements OnInit {
     this.authService.login(postData).subscribe(data => {
 
       localStorage.setItem('token', JSON.stringify(data));
+      localStorage.setItem('loginToken', data['token']);
       localStorage.setItem('role', data['role']);
       localStorage.setItem('image', data['profile'].gravatar);
       localStorage.setItem('username', data['profile'].username);
@@ -61,10 +62,11 @@ export class SigninComponent implements OnInit {
         localStorage.setItem('status', data['profile'].status);
         localStorage.setItem('position', data['profile'].position);
       console.log('get tokenFromStorage:: ', localStorage.getItem('token') );
-      console.log('get role :: ', localStorage.getItem('role') );
+      // console.log('get role :: ', localStorage.getItem('role') );
       // console.log('get profile :: ', localStorage.getItem('profile') );
       // console.log('get image :: ', localStorage.getItem('image') );
       // console.log('get username :: ', localStorage.getItem('username') );
+      console.log('login token :: ', localStorage.getItem('loginToken') );
 
       this.snackBar.open(`Welcome ${data['profile'].username}`, '', this.config);
 

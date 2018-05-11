@@ -11,24 +11,24 @@
 
 
   <div class="wrapper">
-    <div fxLayout="row" fxLayoutWrap="wrap">
+    <div fxLayout="row" fxLayoutWrap="wrap" *ngIf="profile">
       <div fxFlex.gt-sm="40" fxFlex="100">
         <mat-card>
           <mat-card-content>
             <div fxLayout="row">
               <div fxFlex="55">
-                <h1 class="ma-0">{{firstName}} <b>{{lastName}}</b></h1>
-                <small>{{email}}</small>
-                <p class="mt-xs mb-xs">Human Resources Manager</p>
-                <a href="javascript:;" class="block mt-xs mb-xs">email@contact.com</a>
-                <a href="javascript:;" class="block mt-xs mb-xs">www.example.com</a>
+                <h1 class="ma-0">{{profile.firstName}} <b>{{profile.lastName}}</b></h1>
+                <small><em>{{profile.email}}</em></small>
+                <p class="mt-xs mb-xs">{{profile.position}}</p>
+                <a href="javascript:;" class="block mt-xs mb-xs">info@sasghana.com</a>
+                <a href="javascript:;" class="block mt-xs mb-xs">www.sasghana.com</a>
                 <button mat-raised-button color="primary">Edit Profile</button>
               </div>
               <div fxFlex="45">
                 <figure>
                   <div class="text-xs-center">
                     <!--<img src="assets/images/face4.jpg" alt="" class="radius-circle">-->
-                    <ngx-avatar gravatarId="{{email}}" size="130"></ngx-avatar>
+                    <ngx-avatar gravatarId="{{profile.email}}" size="130"></ngx-avatar>
 
                     <div class="text-md mt10">Account Usage</div>
                   </div>
@@ -60,7 +60,7 @@
           <hr>
           <mat-card-content>
             <h4 class="mt-0">About</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper.</p>
+            <p>{{profile.bio}}</p>
           </mat-card-content>
         </mat-card>
       </div>
@@ -158,12 +158,12 @@
 
                       <div fxLayout="column" class="mb-1">
                         <span class="text-md">Country</span>
-                        <strong>Zimbabwe</strong>
+                        <strong>Ghana</strong>
                       </div>
 
                       <div fxLayout="column">
                         <span class="text-md">Occupation</span>
-                        <strong>System Analyst</strong>
+                        <strong>{{profile.position}}</strong>
                       </div>
 
                     </div>
@@ -194,7 +194,7 @@
                 <hr>
                 <mat-card-content>
                   <h6 class="mt-0 mb-1">Bio</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                  <p>{{profile.bio}}</p>
                 </mat-card-content>
                 <hr>
               </mat-tab>

@@ -7,19 +7,28 @@ import {Profile} from "./profile.model";
 export class ProfileService {
 
   result: any;
+  loginToken;
+  constructor(private http: HttpClient) {
+    this.loginToken = localStorage.getItem('loginToken')
+  }
 
-  constructor(private http: HttpClient) { }
+  getPeople(id) {
+    console.log('getPeople service id :: ', JSON.stringify(id));
+    const headers = new HttpHeaders({ 'Content-Type' : 'application/json' });
+    return this.http.get(`${environment.api_url}/api/people/${id}`, {headers: headers});
+  }
 
   getPeoples() {
+    console.log('get all people service  :: ');
     const headers = new HttpHeaders({ 'Content-Type' : 'application/json' });
     return this.http.get(`${environment.api_url}/api/peoples`, {headers: headers});
   }
 
-  getPeople(user: Profile) {
-    console.log('@injectable postData :: ', JSON.stringify(user));
-    const headers = new HttpHeaders({ 'Content-Type' : 'application/json' });
-    return this.http.get(`${environment.api_url}/api/people/`+user.id, {headers: headers});
-  }
+  getUerProfile() {
+    console.log(`get user profile`);
+    const headers =  new HttpHeaders({'Authorization': this.loginToken});
+    return this.http.get(`${environment.api_url}/api/profile`, {headers: headers});
 
+  }
 
 }

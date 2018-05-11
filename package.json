@@ -40,6 +40,7 @@
     "angular-calendar": "0.23.3",
     "angular-router-animations": "0.0.4",
     "angular-tree-component": "7.0.1",
+    "angular2-jwt": "^0.2.3",
     "angular2-text-mask": "8.0.4",
     "angularfire2": "^5.0.0-rc.6",
     "async": "^2.6.0",

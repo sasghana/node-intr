@@ -4,20 +4,24 @@
 var UserController = {
     index: function (req, res) {
         res.status(200).json({
-            message: 'Welcome, User page',
-            username: '' + req.user.username,
-            email: '' + req.user.email,
-            phone: '' +req.user.mobile,
-            bio: '' + req.user.bio
+            message: 'Welcome to Staff Profile',
+            username: req.user.username,
+            firstName: req.user.firstName,
+            middleName: req.user.middleName,
+            lastName: req.user.lastName,
+            mobile: req.user.mobile,
+            email: req.user.email,
+            phone: req.user.mobile,
+            department: req.user.department,
+            position: req.user.position,
+            bio: req.user.bio,
+            dateOfBirth: req.user.dateOfBirth,
+            gravatar: req.user.gravatar,
+            following: 'false',
+            status: req.user.status,
+            joined: req.user.joined
         });
-    },
-    me: function (req,res) {
-        res.status().json({
-            email:''+req.user.email,
-            username:''+req.user.username
-        })
     }
-
 };
 
 module.exports = UserController;
