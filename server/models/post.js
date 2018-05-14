@@ -10,11 +10,12 @@ var Sequelize = require('sequelize'),
 
 // 1: The model schema.
 var modelDefinition = {
-  title:{ type: Sequelize.STRING },
+  title:{ type: Sequelize.STRING},
   description: { type: Sequelize.STRING},
   body: { type: Sequelize.TEXT},
+  subject:{ type: Sequelize.STRING},
   reference:{ type: Sequelize.STRING, unique: true },
-  userId:{ type: Sequelize.STRING },
+  user:{ type: Sequelize.STRING },
   comment:{ type: Sequelize.STRING },
   favoriteCount: { type: Sequelize.STRING, defaultValue: 0 },
   tagList:{ type: Sequelize.STRING },
@@ -38,5 +39,6 @@ var PostModel = db.define('post', modelDefinition, modelOptions);
 
 function associate(models) {
   PostModel.belongsTo(models.UserModel,{onDelete: 'cascade'})
+  PostModel.belongsTo(models.GroupModel,{onDelete: 'cascade'})
 }
 module.exports = PostModel;

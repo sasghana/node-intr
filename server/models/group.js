@@ -11,11 +11,11 @@ var Sequelize = require('sequelize'),
 // 1: The model schema.
 var modelDefinition = {
     organization: { type: Sequelize.STRING },
-    title:{ type: Sequelize.STRING },
+    name:{ type: Sequelize.STRING },
     description: { type: Sequelize.STRING},
     category:{ type: Sequelize.STRING, defaultValue: 'admin' },
-    makeCount: { type: Sequelize.Number, defaultValue: 0 },
-    makerIdCount:{ type: Sequelize.Number, defaultValue: 0 },
+    postCount: { type: Sequelize.INTEGER, defaultValue: 0 },
+    postId:{ type: Sequelize.STRING },
     invite: { type: Sequelize.BOOLEAN, defaultValue: false },
     otherInfo:{ type: Sequelize.TEXT },
 };
@@ -31,8 +31,7 @@ var modelOptions = {
 var GroupModel = db.define('group', modelDefinition, modelOptions);
 
 function associate(models) {
-    GroupModel.hasMany(models.MakeModelModel,{
-        onDelete: 'cascade'
-    })
+    GroupModel.belongsTo(models.UserModel,{});
+    GroupModel.hasMany(models.PostModel,{onDelete: 'cascade'})
 }
 module.exports = GroupModel;

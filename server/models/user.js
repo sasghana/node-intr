@@ -20,18 +20,11 @@ var modelDefinition = {
   position: { type: Sequelize.STRING},
   department: { type: Sequelize.STRING},
   status: {type: Sequelize.BOOLEAN, defaultValue: true },
-  following: {
-    type: Sequelize.STRING,
-    references: { model: "UserModel", key: "id" }, //by default primary key is taken id
-    onDelete: "cascade"
-  },
+  following: {type: Sequelize.STRING,},
   followers: { type: Sequelize.STRING },
   like:{ type: Sequelize.STRING },
   group: { type: Sequelize.STRING},
-  role: {
-    type: Sequelize.STRING,
-    defaultValue: config.userRoles.user
-  },
+  role: {type: Sequelize.STRING, defaultValue: config.userRoles.user},
   joined: { type: Sequelize.DATE },
   otherInfo: { type: Sequelize.STRING},
   email_confirmed: { type: Sequelize.BOOLEAN },
@@ -39,8 +32,9 @@ var modelDefinition = {
   secret: { type: Sequelize.STRING},
   blocked: {type: Sequelize.STRING, defaultValue: 'active'},
   gender: { type: Sequelize.STRING},
-  dateOfBirth: {type: Sequelize.DATE}
-
+  dateOfBirth: {type: Sequelize.DATE},
+  country: { type: Sequelize.STRING },
+  geolocation: { type: Sequelize.TEXT}
 };
 
 // 2: The model options.
@@ -85,7 +79,8 @@ function toProfileJsonFor() {
     gravatar: this.gravatar,
     following: 'false',
     status: this.status,
-    joined: this.joined
+    joined: this.joined,
+    country: this.country
   }
 }
 // Hashes the password for a user object.
@@ -99,7 +94,7 @@ function hashPassword(user) {
 
 function associate(models) {
   //A User can have many Makes.
-  UserModel.hasMany(models.MakeModel, {onDelete: 'cascade'});
+  UserModel.hasMany(models.PostModel, {onDelete: 'cascade'});
 }
 
 module.exports = UserModel;

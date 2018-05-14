@@ -16,6 +16,22 @@
 
   <div fxLayout="row"  fxLayoutWrap="wrap">
     <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card>
+        <mat-card-title>Newsfeed</mat-card-title>
+        <mat-card-subtitle>Stories posted today</mat-card-subtitle>
+        <hr>
+        <mat-list>
+          <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
+            <mat-list-item>
+              <img mat-list-avatar src="{{item.photo}}" alt="">
+              <h3 matLine> {{item.from}} </h3>
+              <p matLine> {{item.subject}} - {{item.message}} </p>
+            </mat-list-item>
+          </ng-template>
+        </mat-list>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="100" fxFlex="100">
       <div fxLayout="column" fxLayoutWrap="wrap">
         <div fxFlex="100">
           <mat-card class="card-widget mat-purple">
@@ -72,40 +88,40 @@
     </div>
     <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="100" fxFlex="100">
       <mat-card>
-        <mat-card-title>Newsfeed</mat-card-title>
-        <mat-card-subtitle>Stories posted today</mat-card-subtitle>
+        <mat-card-title>Birthday</mat-card-title>
+        <mat-card-subtitle>Upcoming birthday</mat-card-subtitle>
         <hr>
         <mat-list>
-          <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
+          <ng-template>
             <mat-list-item>
-              <img mat-list-avatar src="{{item.photo}}" alt="">
-              <h3 matLine> {{item.from}} </h3>
-              <p matLine> {{item.subject}} - {{item.message}} </p>
+              <img mat-list-avatar src="../../assets/images/avatar.jpg" alt="">
+              <h3 matLine> Hanson Peprah </h3>
+              <p matLine> Birthday - 28 June </p>
             </mat-list-item>
           </ng-template>
         </mat-list>
       </mat-card>
     </div>
-    <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="50" fxFlex="100">
-      <mat-card>
-        <div class="card-image-header bg-image bg-image-signup" style="height: 213px;"></div>
-        <mat-card-content class="text-xs-center">
-          <div fxLayout="row"  fxLayoutWrap="wrap" class="text-uppercase">
-            <div fxFlex="33.33%">
-              <h2 class="mt-0 mb-0">24</h2>
-              <p class="mt-0 mb-0 text-md mat-text-muted">Comments</p>
-            </div>
-            <div fxFlex="33.33%">
-              <h2 class="mt-0 mb-0">45</h2>
-              <p class="mt-0 mb-0 text-md mat-text-muted">Likes</p>
-            </div>
-            <div fxFlex="33.33%">
-              <h2 class="mt-0 mb-0">984</h2>
-              <p class="mt-0 mb-0 text-md mat-text-muted">Shares</p>
-            </div>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
+    <!--<div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="50" fxFlex="100">-->
+      <!--<mat-card>-->
+        <!--<div class="card-image-header bg-image bg-image-signup" style="height: 213px;"></div>-->
+        <!--<mat-card-content class="text-xs-center">-->
+          <!--<div fxLayout="row"  fxLayoutWrap="wrap" class="text-uppercase">-->
+            <!--<div fxFlex="33.33%">-->
+              <!--<h2 class="mt-0 mb-0">24</h2>-->
+              <!--<p class="mt-0 mb-0 text-md mat-text-muted">Comments</p>-->
+            <!--</div>-->
+            <!--<div fxFlex="33.33%">-->
+              <!--<h2 class="mt-0 mb-0">45</h2>-->
+              <!--<p class="mt-0 mb-0 text-md mat-text-muted">Likes</p>-->
+            <!--</div>-->
+            <!--<div fxFlex="33.33%">-->
+              <!--<h2 class="mt-0 mb-0">984</h2>-->
+              <!--<p class="mt-0 mb-0 text-md mat-text-muted">Shares</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</mat-card-content>-->
+      <!--</mat-card>-->
+    <!--</div>-->
   </div>
 </div>

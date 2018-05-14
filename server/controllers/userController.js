@@ -19,7 +19,8 @@ var UserController = {
             gravatar: req.user.gravatar,
             following: 'false',
             status: req.user.status,
-            joined: req.user.joined
+            joined: req.user.joined,
+            country: req.user.country
         });
     }
 };

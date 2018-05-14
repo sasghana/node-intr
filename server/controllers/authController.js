@@ -38,7 +38,8 @@ AuthController.signUp = function (req, res) {
         email_confirmed: 'false',
         mobile_confirmed: 'false',
         gender: req.body.gender,
-        dateOfBirth: new Date()
+        dateOfBirth: new Date(),
+        country: 'Ghana'
       };
 
       return User.create(newUser).then(function () {
