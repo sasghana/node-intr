@@ -10,8 +10,9 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./social.component.scss'],
   animations: [moveIn(), fallIn(), fadeInOut(), growShrink()],
 })
-export class SocialComponent implements OnInit{
+export class SocialComponent implements OnInit {
   profile;
+  email;
   people;
   images: any[] = [];
   num = 1;
@@ -30,10 +31,11 @@ export class SocialComponent implements OnInit{
   pieChartType = 'pie';
 
   constructor(private profileService: ProfileService, private router: ActivatedRoute) {
+    this.getStaffProfile();
     for (this.num; this.num <= 9; this.num += 1) {
       this.images.push(this.num);
     }
-
+    this.email = localStorage.getItem('email');
   }
 
   ngOnInit(){
@@ -57,11 +59,16 @@ export class SocialComponent implements OnInit{
   }
 
   getStaffProfile () {
-    console.log('getStaffProfile = ', this.profile)
     this.profileService.getUerProfile()
       .subscribe(res => {
-        this.profile = res;
-        console.log('get user profile response ~~',this.profile)
-      })
+          this.profile = res;
+          console.log('user profile ~~',this.profile);
+          console.log('get user >>>',this.profile.user)
+        },
+        error => {
+          console.log(`Error getting profile :: ${JSON.stringify(error)}`);
+        }
+      )
+
   }
 }

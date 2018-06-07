@@ -22,10 +22,11 @@
             <div fxLayout="column" fxLayoutAlign="space-around">
               <div class="pb-1">
                 <mat-form-field style="width: 100%">
-                  <input matInput placeholder="Username" [formControl]="form.controls['uname']">
-                  <mat-icon matSuffix>person</mat-icon>
+                  <input matInput placeholder="Email address" type="email" [formControl]="form.controls['email']">
+                  <mat-icon matSuffix>email</mat-icon>
                 </mat-form-field>
-                <small *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched" class="mat-text-warn">Username is required.</small>
+                <small *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched" class="mat-text-warn">You must include an email address.</small>
+                <small *ngIf="form.controls['email'].errors?.email && form.controls['email'].touched" class="mat-text-warn">You must include a valid email address.</small>
               </div>
               <div class="pb-1">
                 <mat-form-field style="width: 100%">

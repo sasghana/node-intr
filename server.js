@@ -1,35 +1,46 @@
-/**
- * Created by hanso on 3/20/2018.
- */
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const passport = require('passport');
+const path = require('path');
+const morgan = require('morgan');
+const cors = require('cors');
 
-var express = require('express'),
-  bodyParser = require('body-parser'),
-  morgan = require('morgan'),
-  sequelize = require('sequelize'),
-  passport = require('passport'),
-  jwt = require('jsonwebtoken'),
-  path = require('path'),
-  cors = require('cors');
+const users = require('./routes/api/users');
+const profile = require('./routes/api/profile');
+const posts = require('./routes/api/posts');
 
-// App related modules.
-var hookJWTStrategy = require('./server/passportStrategy');
+const app = express();
 
-// Initializations.
-var app = express();
-
-// Parse as urlencoded and json |Hook up Passport..|Hook up the HTTP logger.|Hook the passport JWT strategy.
-app.use(bodyParser.urlencoded({extended: false}));
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan('dev'));
+
+// DB Config
+const db = require('./config/keys').mongoURI;
+
+// Connect to MongoDB
+mongoose
+  .connect(db)
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
+
+// Passport middleware
 app.use(passport.initialize());
 
-hookJWTStrategy(passport);
+// Passport Config
+require('./config/passport')(passport);
+
+// Use Routes
+app.use('/api/users', users);
+app.use('/api/profile', profile);
+app.use('/api/posts', posts);
 
 // Set the static files location.
 // Serve static files
 app.use(express.static(path.join(__dirname, '/dist/')));
-app.use('/api', require('./server/routes/api')(passport));// Bundle API routes.
 
 // Catch all route.
 // Return other routes to Angular index file..
@@ -37,7 +48,9 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/dist/index.html'));
 });
 
-// Start the server.
-app.listen('3000', function () {
-  console.log('Magic happens at http://localhost:3000');
-});
+// Server static assets if in production
+if (process.env.NODE_ENV === 'production') {}
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));

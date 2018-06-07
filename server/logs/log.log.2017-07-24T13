@@ -1,9 +1,0 @@
-{
-    "fromAddr":"obed.aboagye@etranzact.com",
-    "toAddr":"hanson.peprah@etranzact.com",
-    "subject":"Test: fundgate email alert",
-    "body":"Hi py, nodemailer test with corporate address.",
-    "level":"info",
-    "message":"info:  mail options: ",
-    "timestamp":"2017-07-24T13:15:14.206Z"
-}

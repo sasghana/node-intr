@@ -20,8 +20,6 @@ export class HeaderComponent {
   gravatar;
   username;
   email;
-  currentUser: any;
-  gravatarName;
   customStyle = {
     width: "40px",
     height: "40px",
@@ -35,7 +33,7 @@ export class HeaderComponent {
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon('search-icon', sanitizer.bypassSecurityTrustResourceUrl('assets/images/search.svg'));
-    this.gravatar = localStorage.getItem('image');
+    this.gravatar = localStorage.getItem('avatar');
     this.username = localStorage.getItem('username');
     this.email = localStorage.getItem('email');
     console.log('****************************************');
@@ -44,10 +42,6 @@ export class HeaderComponent {
     console.log('toolbar email  >>>', this.email);
 
     console.log('****************************************');
-    let avatar  = sanitizer.bypassSecurityTrustResourceUrl('this.gravatar');
-    let gravatarName  = localStorage.getItem('firstName') + localStorage.getItem('lastName');
-    console.log('gravatarName  >>>', this.gravatarName);
-
   }
 
   onLogout() {

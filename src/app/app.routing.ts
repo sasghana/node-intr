@@ -20,7 +20,9 @@ export const AppRoutes: Routes = [
       {path: 'maps', loadChildren: './maps/maps.module#MapModule'},
       {path: 'dragndrop', loadChildren: './dragndrop/dragndrop.module#DragndropModule'},
       {path: 'pages', loadChildren: './pages/pages.module#PagesModule'},
-      {path: 'documentation', loadChildren: './docs/docs.module#DocsModule'}
+      {path: 'documentation', loadChildren: './docs/docs.module#DocsModule'},
+      {path: 'posts', loadChildren: './posts/posts.module#PostsModule'},
+      {path: 'myfeed', loadChildren: './myfeed/myfeed.module#MyfeedModule'}
     ]
   },
   { path: '', component: AuthLayoutComponent,

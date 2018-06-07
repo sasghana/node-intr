@@ -17,7 +17,7 @@
           <mat-card-content>
             <div fxLayout="row">
               <div fxFlex="55">
-                <h1 class="ma-0">{{profile.firstName}} <b>{{profile.lastName}}</b></h1>
+                <h1 class="ma-0">{{profile.user.name}} <b>{{profile.lastName}}</b></h1>
                 <small>{{profile.email}}</small>
                 <p class="mt-xs mb-xs">{{profile.position}}</p>
                 <a href="javascript:;" class="block mt-xs mb-xs">info@sasghana.com</a>
@@ -27,8 +27,8 @@
               <div fxFlex="45">
                 <figure>
                   <div class="text-xs-center">
-                    <!--<img src="assets/images/face4.jpg" alt="" class="radius-circle">-->
-                    <ngx-avatar gravatarId="{{profile.email}}" size="130"></ngx-avatar>
+                    <img src="{{profile.user.avatar}}" alt="" class="radius-circle" width="80%">
+                    <!--<ngx-avatar gravatarId="{{email}}" size="130"></ngx-avatar>-->
 
                     <div class="text-md mt10">Account Usage</div>
                   </div>

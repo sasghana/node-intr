@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import { moveIn, fallIn, fadeInOut, growShrink } from 'angular-router-animations';
 import {MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material';
+import {CustomValidators} from "ng2-validation";
 
 @Component({
   selector: 'app-signin',
@@ -26,23 +27,24 @@ export class SigninComponent implements OnInit {
     if (authService.isLoggedIn()) {
       this.router.navigate(['/social']);
     }
-
     this.config = new MatSnackBarConfig();
     this.config.verticalPosition = this.verticalPosition;
     this.config.horizontalPosition = this.horizontalPosition;
     this.config.duration = 5000;
+
   }
 
   ngOnInit() {
     this.form = this.fb.group({
-      uname: [null, Validators.compose([Validators.required])],
+      email: [null, Validators.compose([Validators.required, CustomValidators.email])],
       password: [null, Validators.compose([Validators.required])]
     });
+
   }
 
   onSubmit() {
     const postData = {
-      username: this.form.value.uname,
+      email: this.form.value.email,
       password: this.form.value.password
     }
     console.log('@component postData :: ', JSON.stringify(postData));
@@ -51,26 +53,25 @@ export class SigninComponent implements OnInit {
       localStorage.setItem('token', JSON.stringify(data));
       localStorage.setItem('loginToken', data['token']);
       localStorage.setItem('role', data['role']);
-      localStorage.setItem('image', data['profile'].gravatar);
-      localStorage.setItem('username', data['profile'].username);
-      localStorage.setItem('firstName', data['profile'].firstName);
-      localStorage.setItem('lastName', data['profile'].lastName);
-        localStorage.setItem('email', data['profile'].email);
-        localStorage.setItem('mobile', data['profile'].mobile);
-        localStorage.setItem('department', data['profile'].department);
-        localStorage.setItem('bio', data['profile'].bio);
-        localStorage.setItem('status', data['profile'].status);
-        localStorage.setItem('position', data['profile'].position);
+      localStorage.setItem('avatar', data['avatar']);
+      localStorage.setItem('username', data['name']);
+        localStorage.setItem('email', data['email']);
+      //   localStorage.setItem('mobile', data['profile'].mobile);
+      //   localStorage.setItem('department', data['profile'].department);
+      //   localStorage.setItem('bio', data['profile'].bio);
+      //   localStorage.setItem('status', data['profile'].status);
+      //   localStorage.setItem('position', data['profile'].position);
       console.log('get tokenFromStorage:: ', localStorage.getItem('token') );
       // console.log('get role :: ', localStorage.getItem('role') );
       // console.log('get profile :: ', localStorage.getItem('profile') );
       // console.log('get image :: ', localStorage.getItem('image') );
-      // console.log('get username :: ', localStorage.getItem('username') );
+      console.log('get username :: ', localStorage.getItem('username') );
+      console.log('get email :: ', localStorage.getItem('email') );
       console.log('login token :: ', localStorage.getItem('loginToken') );
 
-      this.snackBar.open(`Welcome ${data['profile'].username}`, '', this.config);
+        this.snackBar.open('welcome home', '', this.config);
 
-      this.router.navigate(['/social']);
+        this.router.navigate(['/social']);
       },
       error => {
         console.log(`Error Login :: ${JSON.stringify(error)}`);
@@ -79,5 +80,13 @@ export class SigninComponent implements OnInit {
       }
     );
 
+  }
+  getCurrentLogin () {
+    this.authService.getCurrentUser().subscribe(data => {
+      console.log('get current user details >>> ', JSON.stringify(data));
+    },error => {
+        this.snackBar.open(`${error.error['message']}`, '', this.config);
+      }
+    );
   }
 }

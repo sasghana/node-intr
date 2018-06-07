@@ -14,9 +14,7 @@
       <input type="text" placeholder="What are you looking for?" />
     </form>
   </div>
-  <button mat-icon-button #tooltip="matTooltip" matTooltip="Switch accounts" matTooltipPosition="before" matTooltipShowDelay="300">
-    <mat-icon>compare_arrows</mat-icon>
-  </button>
+
   <button [matMenuTriggerFor]="apps" mat-icon-button class="ml-xs" #tooltip="matTooltip" matTooltip="Apps quick launch" matTooltipPosition="before" matTooltipShowDelay="300">
     <mat-icon>apps</mat-icon>
   </button>
@@ -27,10 +25,8 @@
   <!--<span><h4><em>{{username}}</em></h4></span>-->
 
   <button [matMenuTriggerFor]="user" mat-icon-button class="ml-xs" #tooltip="matTooltip" matTooltip="User links" matTooltipPosition="before" matTooltipShowDelay="300" class="ml-xs header-avatar">
-    <!--<img src="assets/images/face4.jpg" alt="" class="toolbar-avatar radius-circle">-->
-    <!--<img [src]="gravatar" alt="image" class="toolbar-avatar radius-circle" />-->
-    <!--<img [src]="avatar" alt="avatar" class="toolbar-avatar radius-circle"/>-->
-    <ngx-avatar gravatarId="{{email}}" [style]="customStyle"></ngx-avatar>
+    <img src="{{gravatar}}" alt="" class="toolbar-avatar radius-circle">
+    <!--<ngx-avatar gravatarId="{{email}}" [style]="customStyle"></ngx-avatar>-->
 
   </button>
 </mat-toolbar>

@@ -33,12 +33,12 @@ const MENUITEMS = [
   },
   {
     state: 'myfeed',
-    name: 'My Feed',
+    name: 'MyFeed',
     type: 'link',
     icon: ''
   },
   {
-    state: 'post',
+    state: 'posts',
     name: 'Posts',
     type: 'link',
     icon: ''

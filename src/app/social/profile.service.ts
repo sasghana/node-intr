@@ -28,7 +28,6 @@ export class ProfileService {
     console.log(`get user profile`);
     const headers =  new HttpHeaders({'Authorization': this.loginToken});
     return this.http.get(`${environment.api_url}/api/profile`, {headers: headers});
-
   }
 
 }
