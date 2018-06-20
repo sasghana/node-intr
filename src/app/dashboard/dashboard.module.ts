@@ -17,6 +17,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutes } from './dashboard.routing';
+import {UICarouselModule} from 'ui-carousel';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { DashboardRoutes } from './dashboard.routing';
     MatGridListModule,
     AgmCoreModule,
     FlexLayoutModule,
-    NgxChartsModule
+    NgxChartsModule,
+    UICarouselModule
   ],
   declarations: [ DashboardComponent ]
 })

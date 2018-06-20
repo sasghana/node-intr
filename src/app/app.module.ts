@@ -43,6 +43,7 @@ import {
   AccordionAnchorDirective,
   AccordionLinkDirective,
   AccordionDirective } from './core';
+import { UICarouselModule } from 'ui-carousel';
 
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
@@ -51,9 +52,10 @@ import {AuthService} from './account/auth.service';
 import {AuthGuard} from './account/auth-guard.service';
 import {Ng2FabSpeedDialModule} from 'ng2-fab-speed-dial';
 import {EcoFabSpeedDialModule} from '@ecodev/fab-speed-dial';
-import {AvatarModule} from "ngx-avatar";
-import {ProfileService} from "./social/profile.service";
-import {PostsService} from "./posts/posts.service";
+import {AvatarModule} from 'ngx-avatar';
+import {ProfileService} from './social/profile.service';
+import {PostsService} from './posts/posts.service';
+import {IssuesService} from './tables/issues.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -109,7 +111,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SharedModule,
     Ng2FabSpeedDialModule,
     EcoFabSpeedDialModule,
-    AvatarModule
+    AvatarModule,
+    UICarouselModule
 
   ],
   providers: [
@@ -120,7 +123,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AuthService,
     AuthGuard,
     ProfileService,
-    PostsService
+    PostsService,
+    IssuesService
   ],
   bootstrap: [AppComponent]
 })

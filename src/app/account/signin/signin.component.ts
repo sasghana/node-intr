@@ -5,7 +5,7 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import { moveIn, fallIn, fadeInOut, growShrink } from 'angular-router-animations';
 import {MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material';
-import {CustomValidators} from "ng2-validation";
+import {CustomValidators} from 'ng2-validation';
 
 @Component({
   selector: 'app-signin',
@@ -55,7 +55,7 @@ export class SigninComponent implements OnInit {
       localStorage.setItem('role', data['role']);
       localStorage.setItem('avatar', data['avatar']);
       localStorage.setItem('username', data['name']);
-        localStorage.setItem('email', data['email']);
+      localStorage.setItem('email', data['email']);
       //   localStorage.setItem('mobile', data['profile'].mobile);
       //   localStorage.setItem('department', data['profile'].department);
       //   localStorage.setItem('bio', data['profile'].bio);
@@ -70,7 +70,6 @@ export class SigninComponent implements OnInit {
       console.log('login token :: ', localStorage.getItem('loginToken') );
 
         this.snackBar.open('welcome home', '', this.config);
-
         this.router.navigate(['/social']);
       },
       error => {
@@ -84,7 +83,7 @@ export class SigninComponent implements OnInit {
   getCurrentLogin () {
     this.authService.getCurrentUser().subscribe(data => {
       console.log('get current user details >>> ', JSON.stringify(data));
-    },error => {
+    }, error => {
         this.snackBar.open(`${error.error['message']}`, '', this.config);
       }
     );
