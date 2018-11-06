@@ -16,7 +16,9 @@ import {
   MatListModule,
   MatProgressBarModule,
   MatSelectModule,
-  MatGridListModule} from '@angular/material';
+  MatGridListModule,
+  MatStepperModule,
+  MatSnackBarModule} from '@angular/material';
 // Angular Flexlayout
 import { FlexLayoutModule } from '@angular/flex-layout';
 // ngx-translate
@@ -56,6 +58,7 @@ import {AvatarModule} from 'ngx-avatar';
 import {ProfileService} from './social/profile.service';
 import {PostsService} from './posts/posts.service';
 import {IssuesService} from './tables/issues.service';
+import { AppService } from './leaveapp/app.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -103,6 +106,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatSelectModule,
     MatGridListModule,
     MatProgressBarModule,
+    MatStepperModule,
+    MatSnackBarModule,
     FlexLayoutModule,
     LoadingBarRouterModule,
     LoadingBarModule.forRoot(),
@@ -124,7 +129,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AuthGuard,
     ProfileService,
     PostsService,
-    IssuesService
+    IssuesService,
+    AppService
   ],
   bootstrap: [AppComponent]
 })

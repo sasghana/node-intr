@@ -1,9 +1,9 @@
 export interface Post {
   id?: any;
-  title: string,
+  title: string;
   text: string;
   name: string;
   avatar?: any;
-  department?: any,
+  department?: any;
   groups?: any;
 }

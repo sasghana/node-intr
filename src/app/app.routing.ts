@@ -22,7 +22,8 @@ export const AppRoutes: Routes = [
       {path: 'pages', loadChildren: './pages/pages.module#PagesModule'},
       {path: 'documentation', loadChildren: './docs/docs.module#DocsModule'},
       {path: 'posts', loadChildren: './posts/posts.module#PostsModule'},
-      {path: 'myfeed', loadChildren: './myfeed/myfeed.module#MyfeedModule'}
+      {path: 'myfeed', loadChildren: './myfeed/myfeed.module#MyfeedModule'},
+      {path: 'leaveapp', loadChildren: './leaveapp/leaveapp.module#LeaveappModule'}
     ]
   },
   { path: '', component: AuthLayoutComponent,

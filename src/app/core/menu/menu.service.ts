@@ -130,8 +130,8 @@ const MENUITEMS = [
     icon: '',
   },
   {
-    state: 'software',
-    name: 'Softwares',
+    state: 'leaveapp',
+    name: 'Leave App',
     type: 'link',
     icon: ''
   },

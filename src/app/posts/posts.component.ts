@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { moveIn, fallIn, fadeInOut, growShrink } from 'angular-router-animations';
-import {Post} from "./posts.model";
-import {PostsService} from "./posts.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Post} from './posts.model';
+import {PostsService} from './posts.service';
+import {ActivatedRoute, Router} from '@angular/router';
 import {MatChipInputEvent} from '@angular/material';
 import {ENTER, COMMA} from '@angular/cdk/keycodes';
 
@@ -36,29 +36,29 @@ export class PostsComponent implements OnInit {
   constructor(private postsService: PostsService, private router: ActivatedRoute) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
   }
 
-  getPostById (){
+  getPostById () {
     this.router.params.subscribe((params) => {
       // let id = params['id'];
-      let id = 3;
+      const id = 3;
 
       this.postsService.getPost(id)
-        .subscribe(res=>this.posts = res );
-    })
+        .subscribe(res => this.posts = res );
+    });
   }
 
   getAllPostContent () {
     this.postsService.getAllPosts()
       .subscribe(res => {
           this.posts = res;
-          console.log('query all post ~~',this.posts);
+          console.log('query all post ~~', this.posts);
         },
         error => {
           console.log(`error get post  content :: ${JSON.stringify(error)}`);
         }
-      )
+      );
   }
   // Enter, comma, semi-colon
   separatorKeysCodes = [ENTER, COMMA, 186];
